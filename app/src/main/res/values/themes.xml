@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CourseHub" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Backgrounds -->
+        <item name="android:windowBackground">@color/light_gray</item>
+        <item name="colorOnBackground">@color/primary_text</item>
+
+        <!-- Surfaces -->
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/dark_gray</item>
+
+        <!-- Error Colors -->
+        <item name="colorError">@color/red</item>
+        <item name="colorOnError">@color/white</item>
+    </style>
+
+    <style name="Theme.CourseHub" parent="Base.Theme.CourseHub" />
+</resources>
