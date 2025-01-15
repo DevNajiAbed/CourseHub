@@ -56,7 +56,7 @@ dependencies {
     implementation(libs.room.ktx)
 
     // Navigation
-    implementation(libs.androidx.navigation.fragment.ktx.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui)
     implementation(libs.androidx.navigation.dynamic.features.fragment)
 

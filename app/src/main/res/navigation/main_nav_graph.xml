@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_auth_graph"
+    app:startDestination="@id/authNavHostFragment">
+
+    <fragment
+        android:id="@+id/authNavHostFragment"
+        android:name="com.iug.coursehub.feature.authentication.AuthNavHostFragment"
+        android:label="fragment_auth_nav_host"
+        tools:layout="@layout/fragment_auth_nav_host" >
+        <action
+            android:id="@+id/action_authNavHostFragment_to_dashboardNavHostFragment"
+            app:destination="@id/dashboardNavHostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardNavHostFragment"
+        android:name="com.iug.coursehub.feature.dashboard.DashboardNavHostFragment"
+        android:label="fragment_dashboard_nav_host"
+        tools:layout="@layout/fragment_dashboard_nav_host" >
+        <action
+            android:id="@+id/action_dashboardNavHostFragment_to_authNavHostFragment"
+            app:destination="@id/authNavHostFragment" />
+    </fragment>
+</navigation>

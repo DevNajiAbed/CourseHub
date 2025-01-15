@@ -1,5 +1,6 @@
 package com.iug.coursehub.feature.authentication.login_screen
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -28,16 +29,23 @@ class LoginViewModel : ViewModel() {
                 val adminPassword = AppPrefs.getAdminPassword()
 
                 if (email == adminEmail && password == adminPassword) {
+                    if(AppPrefs.getRememberMe()) {
+                        AppPrefs.saveCurrUserAsAdmin()
+                    }
                     _uiAction.postValue(UiAction.NavigateToAdminScreen)
                     return@launch
                 }
 
                 val user = CoursesRepository.getUserByEmailAndPassword(email, password)
 
-                if (email == user.email && password == user.password) {
-                    AppPrefs.saveCurrentUserId(user.id)
-                    _uiAction.postValue(UiAction.NavigateToUserScreen)
+                if(user == null) {
+                    _uiAction.postValue(UiAction.ShowToast("Error in email or password"))
                     return@launch
+                }
+
+                if (email == user.email && password == user.password) {
+                    AppPrefs.saveCurrentUserId(user.id!!)
+                    _uiAction.postValue(UiAction.NavigateToUserScreen)
                 }
             }
         }

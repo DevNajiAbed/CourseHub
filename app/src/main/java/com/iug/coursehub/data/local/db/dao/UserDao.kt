@@ -18,5 +18,5 @@ interface UserDao {
     suspend fun getUserByEmailAndPassword(
         email: String,
         password: String
-    ): User
+    ): User?
 }

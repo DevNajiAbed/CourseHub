@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard_nav_graph"
+    app:startDestination="@id/coursesFragment">
+
+    <fragment
+        android:id="@+id/coursesFragment"
+        android:name="com.iug.coursehub.feature.dashboard.courses_screen.CoursesFragment"
+        android:label="fragment_courses"
+        tools:layout="@layout/fragment_courses" >
+        <action
+            android:id="@+id/action_coursesFragment_to_addEditCourseFragment"
+            app:destination="@id/addEditCourseFragment" />
+        <action
+            android:id="@+id/action_coursesFragment_to_lessonsFragment"
+            app:destination="@id/lessonsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditCourseFragment"
+        android:name="com.iug.coursehub.feature.dashboard.add_edit_course_screen.AddEditCourseFragment"
+        android:label="fragment_add_edit_course"
+        tools:layout="@layout/fragment_add_edit_course" >
+        <action
+            android:id="@+id/action_addEditCourseFragment_to_coursesFragment"
+            app:destination="@id/coursesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonsFragment"
+        android:name="com.iug.coursehub.feature.dashboard.lessons_screen.LessonsFragment"
+        android:label="fragment_lessons"
+        tools:layout="@layout/fragment_lessons" >
+        <action
+            android:id="@+id/action_lessonsFragment_to_addEditLessonFragment"
+            app:destination="@id/addEditLessonFragment" />
+        <action
+            android:id="@+id/action_lessonsFragment_to_coursesFragment"
+            app:destination="@id/coursesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditLessonFragment"
+        android:name="com.iug.coursehub.feature.dashboard.add_edit_lesson_screen.AddEditLessonFragment"
+        android:label="fragment_add_edit_lesson"
+        tools:layout="@layout/fragment_add_edit_lesson" >
+        <action
+            android:id="@+id/action_addEditLessonFragment_to_lessonsFragment"
+            app:destination="@id/lessonsFragment" />
+    </fragment>
+</navigation>

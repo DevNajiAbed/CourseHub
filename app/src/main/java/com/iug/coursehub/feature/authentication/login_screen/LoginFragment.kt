@@ -1,6 +1,7 @@
 package com.iug.coursehub.feature.authentication.login_screen
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.iug.coursehub.R
 import com.iug.coursehub.databinding.FragmentLoginBinding
+import com.iug.coursehub.feature.authentication.AuthNavHostFragment
 
 class LoginFragment : Fragment() {
 
@@ -42,7 +44,7 @@ class LoginFragment : Fragment() {
                 }
 
                 LoginViewModel.UiAction.NavigateToAdminScreen -> {
-
+                    AuthNavHostFragment.viewModel.navigateToAdminScreen()
                 }
 
                 LoginViewModel.UiAction.NavigateToUserScreen -> {
@@ -50,6 +52,9 @@ class LoginFragment : Fragment() {
                 }
 
                 is LoginViewModel.UiAction.ShowToast -> {
+                    if(action.message.lowercase().contains("error")) {
+                        binding.progressBar.visibility = View.GONE
+                    }
                     Toast.makeText(requireContext(), action.message, Toast.LENGTH_SHORT).show()
                 }
             }
