@@ -47,10 +47,6 @@ class CoursesAdapter(
         return courses.size
     }
 
-    fun updateList(list: List<Course>) {
-        courses = list
-        notifyDataSetChanged()
-    }
 
     class CourseViewHolder(val binding: ItemCourseBinding)
         : RecyclerView.ViewHolder(binding.root)

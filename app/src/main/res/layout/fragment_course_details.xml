@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:elevation="2dp"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".feature.user.home_screen.course_details_screen.CourseDetailsFragment">
+
+    <ImageButton
+        android:id="@+id/btnNavigateUp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_arrow_back"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="16dp"/>
+
+    <ImageView
+        android:id="@+id/courseImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/courseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="Course Name" />
+
+    <TextView
+        android:id="@+id/coursePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:text="Price: $0.00" />
+
+    <TextView
+        android:id="@+id/courseStudents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:text="Students Enrolled: 0" />
+
+    <TextView
+        android:id="@+id/courseHours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:text="Total Hours: 0" />
+
+    <TextView
+        android:id="@+id/courseDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="Course Contents and Topics" />
+
+    <TextView
+        android:id="@+id/courseContents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        tools:text="Detailed topics will be listed here..." />
+
+    <TextView
+        android:id="@+id/courseLecturer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Lecturer: [Name]" />
+
+    <Button
+        android:id="@+id/btnJoinCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Join Course"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

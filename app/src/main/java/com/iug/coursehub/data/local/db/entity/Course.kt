@@ -15,7 +15,8 @@ data class Course(
     val imageByteArray: ByteArray,
     val price: Float,
     val noOfHours: Int,
-    val lecturerName: String
+    val lecturerName: String,
+    val category: String
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

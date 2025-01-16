@@ -21,4 +21,10 @@ interface CourseDao {
 
     @Delete
     suspend fun deleteCourse(course: Course)
+
+    @Query("SELECT * FROM course WHERE category = :category ORDER BY id DESC")
+    fun getCoursesByCategory(category: String): LiveData<List<Course>>
+
+    @Query("SELECT * FROM course WHERE id IN (:ids)")
+    suspend fun getAllCoursesOfIds(ids: List<Int>): List<Course>
 }

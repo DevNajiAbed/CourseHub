@@ -45,16 +45,11 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 MainViewModel.UiAction.NavigateToUserNavHost -> {
-
-                }
-                
-                MainViewModel.UiAction.NavigateUserToAuthNavHost -> {
-
+                    navController.navigate(R.id.action_authNavHostFragment_to_userNavHostFragment)
                 }
 
-                MainViewModel.UiAction.NavigateAdminToAuthNavHost -> {
-                    navController.navigate(R.id.action_dashboardNavHostFragment_to_authNavHostFragment)
-                    navController.popBackStack()
+                MainViewModel.UiAction.NavigateUserToAuth -> {
+                    navController.navigate(R.id.action_homeNavHostFragment_to_authNavHostFragment)
                 }
             }
         }

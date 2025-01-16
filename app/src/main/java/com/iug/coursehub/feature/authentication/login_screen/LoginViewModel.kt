@@ -14,8 +14,10 @@ class LoginViewModel : ViewModel() {
     private val _uiAction = MutableLiveData<UiAction>()
     val uiAction: LiveData<UiAction> = _uiAction
 
+    private var rememberMe: Boolean = false
+
     fun saveRememberMe(rememberMe: Boolean) {
-        AppPrefs.saveRememberMe(rememberMe)
+        this.rememberMe = rememberMe
     }
 
     fun login(
@@ -29,7 +31,8 @@ class LoginViewModel : ViewModel() {
                 val adminPassword = AppPrefs.getAdminPassword()
 
                 if (email == adminEmail && password == adminPassword) {
-                    if(AppPrefs.getRememberMe()) {
+                    AppPrefs.saveRememberMe(rememberMe)
+                    if(rememberMe) {
                         AppPrefs.saveCurrUserAsAdmin()
                     }
                     _uiAction.postValue(UiAction.NavigateToAdminScreen)
@@ -44,6 +47,7 @@ class LoginViewModel : ViewModel() {
                 }
 
                 if (email == user.email && password == user.password) {
+                    AppPrefs.saveRememberMe(rememberMe)
                     AppPrefs.saveCurrentUserId(user.id!!)
                     _uiAction.postValue(UiAction.NavigateToUserScreen)
                 }

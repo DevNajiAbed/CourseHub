@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_nav_graph"
+    app:startDestination="@id/profileHomeFragment">
+
+    <fragment
+        android:id="@+id/profileHomeFragment"
+        android:name="com.iug.coursehub.feature.user.profile_screen.profile_home_screen.ProfileHomeFragment"
+        android:label="fragment_profile_home"
+        tools:layout="@layout/fragment_profile_home" >
+        <action
+            android:id="@+id/action_profileHomeFragment_to_editUserFragment"
+            app:destination="@id/editUserFragment" />
+        <action
+            android:id="@+id/action_profileHomeFragment_to_bookmarkedCoursesFragment"
+            app:destination="@id/bookmarkedCoursesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editUserFragment"
+        android:name="com.iug.coursehub.feature.user.profile_screen.edit_user_screen.EditUserFragment"
+        android:label="fragment_edit_user"
+        tools:layout="@layout/fragment_edit_user" >
+        <action
+            android:id="@+id/action_editUserFragment_to_profileHomeFragment"
+            app:destination="@id/profileHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookmarkedCoursesFragment"
+        android:name="com.iug.coursehub.feature.user.profile_screen.bookmarked_courses_screen.BookmarkedCoursesFragment"
+        android:label="fragment_bookmarked_courses"
+        tools:layout="@layout/fragment_bookmarked_courses" >
+        <action
+            android:id="@+id/action_bookmarkedCoursesFragment_to_profileHomeFragment"
+            app:destination="@id/profileHomeFragment" />
+    </fragment>
+</navigation>

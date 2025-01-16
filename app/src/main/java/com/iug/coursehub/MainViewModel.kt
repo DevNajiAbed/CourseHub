@@ -9,14 +9,6 @@ class MainViewModel : ViewModel() {
     private val _uiAction = MutableLiveData<UiAction>()
     val uiAction: LiveData<UiAction> = _uiAction
 
-    fun navigateAdminToAuthNavHost() {
-        _uiAction.postValue(UiAction.NavigateAdminToAuthNavHost)
-    }
-
-    fun navigateUserToAuthNavHost() {
-        _uiAction.postValue(UiAction.NavigateUserToAuthNavHost)
-    }
-
     fun navigateToDashboardNavHost() {
         _uiAction.postValue(UiAction.NavigateToDashboardNavHost)
     }
@@ -25,10 +17,13 @@ class MainViewModel : ViewModel() {
         _uiAction.postValue(UiAction.NavigateToUserNavHost)
     }
 
+    fun navigateUserToAuth() {
+        _uiAction.postValue(UiAction.NavigateUserToAuth)
+    }
+
     sealed interface UiAction {
         data object NavigateToDashboardNavHost : UiAction
         data object NavigateToUserNavHost : UiAction
-        data object NavigateUserToAuthNavHost : UiAction
-        data object NavigateAdminToAuthNavHost : UiAction
+        data object NavigateUserToAuth : UiAction
     }
 }

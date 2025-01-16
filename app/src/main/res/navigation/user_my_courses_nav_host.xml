@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_courses_nav_host"
+    app:startDestination="@id/myCourseListFragment">
+    <fragment
+        android:id="@+id/myCourseListFragment"
+        android:name="com.iug.coursehub.feature.user.my_courses_screen.my_course_list_screen.MyCourseListFragment"
+        android:label="fragment_my_course_list"
+        tools:layout="@layout/fragment_my_course_list" >
+        <action
+            android:id="@+id/action_myCourseListFragment_to_lessonListFragment"
+            app:destination="@id/lessonListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonListFragment"
+        android:name="com.iug.coursehub.feature.user.my_courses_screen.lesson_list_screen.LessonListFragment"
+        android:label="fragment_lesson_list"
+        tools:layout="@layout/fragment_lesson_list" >
+        <action
+            android:id="@+id/action_lessonListFragment_to_myCourseListFragment"
+            app:destination="@id/myCourseListFragment" />
+        <action
+            android:id="@+id/action_lessonListFragment_to_lessonContentFragment"
+            app:destination="@id/lessonContentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonContentFragment"
+        android:name="com.iug.coursehub.feature.user.my_courses_screen.lesson_content_screen.LessonContentFragment"
+        android:label="fragment_lesson_content"
+        tools:layout="@layout/fragment_lesson_content" >
+        <action
+            android:id="@+id/action_lessonContentFragment_to_lessonListFragment"
+            app:destination="@id/lessonListFragment" />
+    </fragment>
+</navigation>

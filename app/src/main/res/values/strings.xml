@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">CourseHub</string>
+    <string-array name="course_categories">
+        <item>Choose a category</item>
+        <item>Programming</item>
+        <item>Web Development</item>
+        <item>Mobile Development</item>
+        <item>Data Science</item>
+        <item>AI and Machine Learning</item>
+        <item>Game Development</item>
+        <item>Cybersecurity</item>
+        <item>Blockchain</item>
+        <item>Cloud Computing</item>
+        <item>UI/UX Design</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

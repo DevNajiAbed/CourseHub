@@ -48,7 +48,7 @@ class LoginFragment : Fragment() {
                 }
 
                 LoginViewModel.UiAction.NavigateToUserScreen -> {
-
+                    AuthNavHostFragment.viewModel.navigateToUserScreen()
                 }
 
                 is LoginViewModel.UiAction.ShowToast -> {

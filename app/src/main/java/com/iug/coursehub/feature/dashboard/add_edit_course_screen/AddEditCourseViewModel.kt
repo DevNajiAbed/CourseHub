@@ -44,6 +44,10 @@ class AddEditCourseViewModel : ViewModel() {
                 _uiAction.postValue(UiAction.ShowToast("You should insert a name for the lecturer of the course"))
                 return false
             }
+            if(category.trim().isBlank()) {
+                _uiAction.postValue(UiAction.ShowToast("You should pick a category for the course"))
+                return false
+            }
         }
         return true
     }

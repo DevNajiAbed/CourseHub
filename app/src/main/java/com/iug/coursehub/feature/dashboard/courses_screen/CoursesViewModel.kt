@@ -22,6 +22,7 @@ class CoursesViewModel : ViewModel() {
 
     fun signOut() {
         AppPrefs.saveRememberMe(false)
+        AppPrefs.unSaveCurrUserAsAdmin()
         _uiAction.postValue(UiAction.NavigateToAuthScreen)
     }
 

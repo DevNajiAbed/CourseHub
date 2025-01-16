@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.PickVisualMediaRequest
@@ -53,7 +54,7 @@ class AddEditCourseFragment : Fragment() {
         mediaPickerLauncher = registerForActivityResult(
             contract = ActivityResultContracts.PickVisualMedia()
         ) { uri ->
-            if(uri != null) {
+            if (uri != null) {
                 imageByteArray = uri.toByteArray()
                 binding.courseImageView.setImageURI(uri)
             } else {
@@ -79,6 +80,25 @@ class AddEditCourseFragment : Fragment() {
                         mediaType = ActivityResultContracts.PickVisualMedia.ImageOnly
                     )
                 )
+            }
+
+            var selectedCategory = ""
+            spinnerCategories.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    if (position == 0)
+                        selectedCategory = ""
+                    else
+                        selectedCategory = parent.getItemAtPosition(position).toString()
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
             }
 
             saveButton.setOnClickListener {
@@ -113,7 +133,8 @@ class AddEditCourseFragment : Fragment() {
                         price = price,
                         noOfHours = noOfHours,
                         lecturerName = lecturerName,
-                        imageByteArray = it
+                        imageByteArray = it,
+                        category = selectedCategory
                     )
 
                     viewModel.saveCourse(course)
@@ -137,7 +158,8 @@ class AddEditCourseFragment : Fragment() {
     }
 
     private fun FragmentAddEditCourseBinding.fillFields(course: Course) {
-        val bitmap = BitmapFactory.decodeByteArray(course.imageByteArray, 0, course.imageByteArray.size)
+        val bitmap =
+            BitmapFactory.decodeByteArray(course.imageByteArray, 0, course.imageByteArray.size)
         courseImageView.setImageBitmap(bitmap)
         nameEditText.setText(course.name)
         priceEditText.setText(course.price.toString())

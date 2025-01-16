@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_authNavHostFragment_to_dashboardNavHostFragment"
             app:destination="@id/dashboardNavHostFragment" />
+        <action
+            android:id="@+id/action_authNavHostFragment_to_userNavHostFragment"
+            app:destination="@id/userNavHostFragment" />
     </fragment>
     <fragment
         android:id="@+id/dashboardNavHostFragment"
@@ -21,6 +24,15 @@
         tools:layout="@layout/fragment_dashboard_nav_host" >
         <action
             android:id="@+id/action_dashboardNavHostFragment_to_authNavHostFragment"
+            app:destination="@id/authNavHostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userNavHostFragment"
+        android:name="com.iug.coursehub.feature.user.UserNavHostFragment"
+        android:label="fragment_home_nav_host"
+        tools:layout="@layout/fragment_user_nav_host" >
+        <action
+            android:id="@+id/action_homeNavHostFragment_to_authNavHostFragment"
             app:destination="@id/authNavHostFragment" />
     </fragment>
 </navigation>

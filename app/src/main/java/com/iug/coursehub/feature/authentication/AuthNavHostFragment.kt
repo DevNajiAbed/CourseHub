@@ -29,7 +29,7 @@ class AuthNavHostFragment : Fragment() {
                     findNavController().navigate(R.id.action_authNavHostFragment_to_dashboardNavHostFragment)
                 }
                 AuthViewModel.UiAction.NavigateToUserScreen -> {
-
+                    findNavController().navigate(R.id.action_authNavHostFragment_to_userNavHostFragment)
                 }
             }
         }

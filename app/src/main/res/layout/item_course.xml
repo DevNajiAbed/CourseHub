@@ -48,6 +48,19 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <ImageButton
+            android:id="@+id/btnBookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bookmark"
+            app:tint="?attr/colorPrimary"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/tvCourseName"
+            app:layout_constraintBottom_toBottomOf="@id/tvCourseName"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageButton
             android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,6 +80,7 @@
             android:textColor="?attr/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:layout_marginBottom="16dp"
             app:layout_constraintStart_toStartOf="@id/tvCourseName"
             app:layout_constraintTop_toTopOf="@id/btnShowLessons"
             app:layout_constraintBottom_toBottomOf="@id/btnShowLessons"/>

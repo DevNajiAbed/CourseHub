@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_nav_graph"
+    app:startDestination="@id/userHomeNavHostFragment">
+
+    <fragment
+        android:id="@+id/userHomeNavHostFragment"
+        android:name="com.iug.coursehub.feature.user.home_screen.UserHomeNavHostFragment"
+        android:label="fragment_user_home"
+        tools:layout="@layout/fragment_user_home_nav_host" />
+    <fragment
+        android:id="@+id/myCoursesNavHostFragment"
+        android:name="com.iug.coursehub.feature.user.my_courses_screen.MyCoursesNavHostFragment"
+        android:label="fragment_my_courses"
+        tools:layout="@layout/fragment_my_courses_nav_host" />
+    <fragment
+        android:id="@+id/profileNavHostFragment"
+        android:name="com.iug.coursehub.feature.user.profile_screen.ProfileNavHostFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile_nav_host" />
+</navigation>

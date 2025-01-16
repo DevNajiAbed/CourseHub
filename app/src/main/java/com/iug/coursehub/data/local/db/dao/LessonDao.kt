@@ -22,4 +22,7 @@ interface LessonDao {
 
     @Delete
     suspend fun deleteLesson(lesson: Lesson)
+
+    @Query("SELECT SUM(id) FROM lesson WHERE courseId = :courseId")
+    fun getNoOfLessonsByCourseId(courseId: Int): Int
 }
