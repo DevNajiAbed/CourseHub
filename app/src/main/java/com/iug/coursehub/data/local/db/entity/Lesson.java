@@ -15,19 +15,19 @@ public class Lesson {
     private String ytLink;
     private int courseId;
 
-    public Lesson(int courseId, String description, int id, String title, String ytLink) {
-        this.courseId = courseId;
-        this.description = description;
+    public Lesson( int id, String title, String description, String ytLink, int courseId) {
         this.id = id;
         this.title = title;
+        this.description = description;
         this.ytLink = ytLink;
+        this.courseId = courseId;
     }
 
-    public Lesson(int courseId, String description, String title, String ytLink) {
-        this.courseId = courseId;
-        this.description = description;
+    public Lesson(String title, String description, String ytLink, int courseId) {
         this.title = title;
+        this.description = description;
         this.ytLink = ytLink;
+        this.courseId = courseId;
     }
 
     public int getCourseId() {

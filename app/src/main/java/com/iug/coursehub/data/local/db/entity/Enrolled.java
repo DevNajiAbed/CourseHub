@@ -13,15 +13,15 @@ public class Enrolled {
     private int userId;
     private int courseId;
 
-    public Enrolled(int courseId, int id, int userId) {
-        this.courseId = courseId;
+    public Enrolled(int id, int userId, int courseId) {
         this.id = id;
         this.userId = userId;
+        this.courseId = courseId;
     }
 
-    public Enrolled(int courseId, int userId) {
-        this.courseId = courseId;
+    public Enrolled( int userId, int courseId) {
         this.userId = userId;
+        this.courseId = courseId;
     }
 
     public int getCourseId() {

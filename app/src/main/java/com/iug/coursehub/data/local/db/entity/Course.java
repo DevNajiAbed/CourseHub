@@ -19,9 +19,9 @@ public class Course {
     private String lecturerName;
     private String category;
 
-    public Course(String category, int id, byte[] imageByteArray, String lecturerName, String name, int noOfHours, float price) {
-        this.category = category;
+    public Course(int id, String category, byte[] imageByteArray, String lecturerName, String name, int noOfHours, float price) {
         this.id = id;
+        this.category = category;
         this.imageByteArray = imageByteArray;
         this.lecturerName = lecturerName;
         this.name = name;

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".feature.user.home_screen.cuorse_categories_screen.course_list_screen.CourseListFragment">
+    tools:context=".feature.user.home_screen.course_categories_screen.course_list_screen.CourseListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_courses"

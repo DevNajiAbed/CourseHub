@@ -6,7 +6,7 @@
     app:startDestination="@id/courseCategoriesFragment">
     <fragment
         android:id="@+id/courseCategoriesFragment"
-        android:name="com.iug.coursehub.feature.user.home_screen.cuorse_categories_screen.CourseCategoriesFragment"
+        android:name="com.iug.coursehub.feature.user.home_screen.course_categories_screen.CourseCategoriesFragment"
         android:label="CourseCategoriesFragment" >
         <action
             android:id="@+id/action_courseCategoriesFragment_to_courseDetailsFragment"
